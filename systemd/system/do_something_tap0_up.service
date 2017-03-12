@@ -1,0 +1,13 @@
+[Unit]
+Description=Do something on tap0 up
+
+After=sys-devices-virtual-net-tap0.device
+Wants=sys-devices-virtual-net-tap0.device
+BindsTo=sys-subsystem-net-devices-tap0.device
+
+[Service]
+Type=oneshot
+ExecStart=/bin/true
+
+[Install]
+WantedBy=multi-user.target
